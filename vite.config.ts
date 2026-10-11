@@ -5,14 +5,11 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { nitro } from "nitro/vite";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
-import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
-    appEnvPlugin(),
     tanstackStart({
       tsr: {
         routesDirectory: "./src/routes",
@@ -30,7 +27,6 @@ export default defineConfig({
         },
       },
     }),
-    grokPwaPlugin(),
   ],
   resolve: {
     alias: {
