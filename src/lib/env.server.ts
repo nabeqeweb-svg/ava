@@ -5,3 +5,7 @@ export function getEnv(key: string, fallback?: string): string {
   }
   return v;
 }
+
+export function getOptionalEnv(key: string): string | undefined {
+  return process.env[key];
+}
